@@ -1,4 +1,4 @@
-# Number-Project
+# Class Number
 
 ## 1 Method
 ```
@@ -99,4 +99,21 @@ function learnJavaScript(f) {
 console.log(learnJavaScript(100));
 
 // answer 5050
+```
+# Class Material ui
+
+## 1 Method
+
+```
+<Button
+    style={{
+        borderRadius: 35,
+        backgroundColor: "#21b6ae",
+        padding: "18px 36px",
+        fontSize: "18px"
+    }}
+    variant="contained"
+    >
+    Submit
+</Button>
 ```
