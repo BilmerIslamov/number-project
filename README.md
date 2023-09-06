@@ -117,3 +117,82 @@ console.log(learnJavaScript(100));
     Submit
 </Button>
 ```
+
+# Time Medhod
+
+## 1 Medhod
+```
+let number = 0;
+
+function updateClock() {
+    const hoursElement = document.getElementById('hrs');
+    const minutesElement = document.getElementById('min');
+    const secondsElement = document.getElementById('sec');
+    
+    const update = () => {
+        const hours = String(Math.floor(number / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((number % 3600) / 60)).padStart(2, '0');
+        const seconds = String(number % 60).padStart(2, '0');
+        
+        hoursElement.textContent = hours;
+        minutesElement.textContent = minutes;
+        secondsElement.textContent = seconds;
+        
+        console.log(seconds);
+        number++;
+        
+        if (number <= 60) {
+            setTimeout(update, 1000);
+        }
+    };
+
+    update();
+}
+
+updateClock();
+```
+
+## 2 Medhod 
+
+```
+let number = 0;
+
+function Time() {
+    if (number <= 60) {
+        const hours = String(Math.floor(number / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((number % 3600) / 60)).padStart(2, '0');
+        const seconds = String(number % 60).padStart(2, '0');
+        
+        document.getElementById('hrs').textContent = hours;
+        document.getElementById('min').textContent = minutes;
+        document.getElementById('sec').textContent = seconds;
+        
+        console.log(seconds);
+        number++;
+        
+        if (number <= 60) {
+            setTimeout(Time, 1000);
+        }
+    }
+    return number;
+}
+
+Time();
+```
+
+## 3 Medhod
+```
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    document.getElementById('hrs').textContent = hours;
+    document.getElementById('min').textContent = minutes;
+    document.getElementById('sec').textContent = seconds;
+}
+
+setInterval(updateTime, 1000); // Vaqt o'zgarishini har 1 sekundda yangilash
+updateTime();
+```
