@@ -196,3 +196,16 @@ function updateTime() {
 setInterval(updateTime, 1000); // Vaqt o'zgarishini har 1 sekundda yangilash
 updateTime();
 ```
+## 4 Medhod Parallax
+```
+attribute: data-speed="2.5"
+function:
+let img = document.querySelector(".images")
+
+window.addEventListener("scroll", () =>{
+    console.log(this.scrollY);
+    let speed  = +img.getAttribute("data-speed")
+    
+    img.style.transform = `translateX(${scrollY * speed}px)`
+})
+```
